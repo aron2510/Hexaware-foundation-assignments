@@ -1,0 +1,50 @@
+1.)
+class ArrayCRUD:
+    def __init__(self):
+        self.arr = []
+
+    def create(self, value):
+        self.arr.append(value)
+        print(f"added {value}.")
+
+    def read(self):
+        if self.arr==None:
+          print("Empty")
+        else:
+          print(f"array:{self.arr}")
+
+    def update(self, index, value):
+        if 0 <= index < len(self.arr):
+            self.arr[index] = value
+            print(f"updated: {self.arr}")
+        else:
+            print("Invalid index.")
+
+    def delete(self, index):
+        if 0 <= index < len(self.arr):
+            print(f"Removed {self.arr.pop(index)}")
+        else:
+            print("Invalid index.")
+
+crud = ArrayCRUD()
+crud.create(10)
+crud.create(20)
+crud.create(30)
+crud.read()
+crud.update(1, 25)
+crud.read()
+crud.update(2,15)
+crud.delete(0)
+crud.read()
+
+
+2.)
+n=list(map(int,input().split()))
+ele=int(input())
+flag=1
+for i in n:
+    if i==ele:
+        print("found")
+        flag=0
+if flag==1:
+    print("Not found")
